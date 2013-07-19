@@ -1,0 +1,16 @@
+<%=form_tag({controller: "todos", action: "add"}, method: "get", class: "addTopic") do%>
+<%=text_field_tag(:query, nil, placeholder: "ddMMyyyy hhmm Aufgabe", class: "query")%>
+<% end %>
+<%=form_tag({controller: "todos", action: "index"}, method: "get", class: "search") do%>
+<%=text_field_tag(:query, nil, placeholder: "Suche", class: "query")%>
+<% end %>
+<ul class="topics">
+
+</ul>
+<div class="editor"></div>
+<nav>
+	<ul>
+		<li class="entypo-search"></li>
+		<li class="entypo-plus"></li>
+	</ul>
+</nav>

@@ -1,0 +1,8 @@
+<%=form_tag({controller: "todos", action: "edit"}, method: "get", class: "nifty_form") %>
+<%=text_field_tag(:name, @name, placeholder: "Name", class:"name")%>
+<%=hidden_field_tag(:id, @id,class: "id")%>
+<input type="date" class="date" name="date" value="<%=@date%>"/>
+<input type="time" class="time" name="time" value="<%=@time%>"/>
+<%=submit_tag("Speichern", class: "save")%>
+<div class="exit">Abbrechen</div>
+
