@@ -4,6 +4,8 @@
 
 @import url(http://weloveiconfonts.com/api/?family=entypo);
 
+$boxcolor: #000;
+
 /* entypo */
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
@@ -18,7 +20,9 @@
 	text-decoration: none;
 	box-sizing: content-box;
 }
-
+html,body{
+	overflow-x:hidden;
+}
 	input, .exit{
 		width: calc(100% - 30px);
 		margin: 5px 10px;
@@ -28,22 +32,60 @@
 	}
 
 .addTopic, .search{
-	background: green;
+	background: rgba(255,255,255,0.9);	
+	position: fixed;
+	width: 100%;
 	display: none;
 	input{
-		margin: 10px;
-		.search &{
-			border-radius: 5px;
+		margin: 10px;	
+		background: transparent;
+		border:0;
+		color: $boxcolor;
+		&:focus{
+			background:#fff;
 		}
 	}
+	::-webkit-input-placeholder { color:$boxcolor; }
+	::-moz-placeholder { color:$boxcolor; } /* firefox 19+ */
+	:-ms-input-placeholder { color:$boxcolor; } /* ie */
+	input:-moz-placeholder { color:$boxcolor; }
 }	
+.search{
+	display: none;
+	input{
+			border-radius: 50px;
+			padding-left: 10px;
+		}
+}
 
 ul.topics{
 	li{
+		color: #fff;
+		font-size: 20px;
 		width: 100%;
-		padding: 10px;	
-		border-bottom: 1px solid #eee;
-		cursor: pointer;	
+		padding: 15px;	
+		cursor: pointer;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: moz-none;
+		-ms-user-select: none;
+		user-select: none;	
+		&:nth-child(1n){
+			background:#E8B50C;
+		}
+		&:nth-child(2n){
+			background:#1485CC;
+		}
+		&:nth-child(3n){
+			background:#0DFF39;
+		}
+		&:nth-child(4n){
+			background:#B21212;
+		}
+		&:nth-child(5n){
+			background:#3FFF89;
+		}
 		&.new{
 			-webkit-transform: translateX(-300px);
 			-webkit-animation: openSpace 0.2s ease forwards, moveIn 0.3s 0.2s ease forwards
@@ -88,17 +130,23 @@ nav {
 	width: 100%;
 	ul{
 		li{
-			background: green;
-			color: #fff;
-			float: left;
-			width: calc(50% - 11px);
-			border-left:1px solid #eee;
-			border-top:1px solid #eee;
-			text-align: center;
-			cursor: pointer;
-			padding: 5px;
+			display: block;
+    		height: 30px;
+    		width: 30px;
+    		line-height: 30px;
+			-moz-border-radius: 30px;
+    		border-radius: 30px;
+    		border:#fff solid 2px;
+			background-color: #0971B2;
+    		color: #fff;
+    		margin: 5px;
+    		text-align: center;
+    		font-size: 1em;
+    		&:first-child{
+				float:left;
+			}
 			&:last-child{
-				border-left:none;
+				float:right;
 			}
 		}
 	}

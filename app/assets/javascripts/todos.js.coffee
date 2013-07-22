@@ -64,14 +64,15 @@ $ ->
 	loadList ''
 
 	$('.entypo-plus').click ->
-		$('.search').hide()
-		$('.addTopic').show()
+		$('.search').attr('class','search animated bounceOutUp')
+		$('.addTopic').show().attr('class','addTopic animated bounceInDown') 
+
 
 
 	$('.entypo-search').click ->
-		$('.addTopic').hide()
-		$('.search').show()
-	
+		$('.addTopic').attr('class','addTopic animated bounceOutUp')
+		$('.search').show().attr('class',' search animated bounceInDown') 
+
 
 
 
